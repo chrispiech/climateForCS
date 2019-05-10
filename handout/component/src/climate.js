@@ -10,7 +10,7 @@ import './src/bootstrapish.css'
 
 let serverRoot = 'https://2uhq8f5ai5.execute-api.us-west-1.amazonaws.com/dev/';
 
-class LikeButton extends Component {
+class ClimateHandout extends Component {
   constructor(props) {
     super(props);
     this.state = { liked: false };
@@ -54,10 +54,10 @@ class LikeButton extends Component {
           Fires in California, floods in Mozambique, ocean acidification in the Pacific... our new millennium has shown an unprecedented intensity of climate change consequences. But what do these have to do with computer science? How do the decisions we make as engineers and computationally-educated leaders affect the planet? And what kinds of opportunities exist for positive, climate-conscious computational leadership and innovation?
         </p>
         <p>
-Surprise: bitcoin uses more energy than Chile.
-</p>
-<p>
-We have all at least heard the word "blockchain" floating around as one example of cutting-edge computing technology that seems to have applications everywhere. We are going to dig into this a bit more and, through an exploration of computing infrastructure and energy, reframe technologies like blockchain - and computation in general - as a tool and a resource, with both enormous potential and insufficiently-examined side effects.
+          Surprise: bitcoin uses more energy than Chile.
+        </p>
+        <p>
+          We have all at least heard the word "blockchain" floating around as one example of cutting-edge computing technology that seems to have applications everywhere. We are going to dig into this a bit more and, through an exploration of computing infrastructure and energy, reframe technologies like blockchain - and computation in general - as a tool and a resource, with both enormous potential and insufficiently-examined side effects.
         </p>
 
 
@@ -82,4 +82,4 @@ We have all at least heard the word "blockchain" floating around as one example 
 }
 
 let domContainer = document.querySelector('#climateHandout');
-ReactDOM.render(<LikeButton />, domContainer);
+ReactDOM.render(<ClimateHandout />, domContainer);
