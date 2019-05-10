@@ -2886,17 +2886,17 @@ a > .twbs code {
 }
 
 .twbs .btn-lg, .twbs .btn-group-lg > .btn {
-  padding: 0.5rem 1em;
-  font-size: 1.25rem;
+  padding: 0.5em 1em;
+  font-size: 1.25em;
   line-height: 1.5;
-  border-radius: 0.3rem;
+  border-radius: 0.3em;
 }
 
 .twbs .btn-sm, .twbs .btn-group-sm > .btn {
-  padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
+  padding: 0.25em 0.5em;
+  font-size: 0.875em;
   line-height: 1.5;
-  border-radius: 0.2rem;
+  border-radius: 0.2em;
 }
 
 .twbs .btn-block {

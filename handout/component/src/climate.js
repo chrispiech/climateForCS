@@ -1,19 +1,23 @@
 'use strict';
 
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom'
+import MetaTags from 'react-meta-tags';
+import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCalendar } from '@fortawesome/free-solid-svg-icons'
-import ReactDOM from 'react-dom'
-import axios from 'axios'
 import './src/climate.css'
 import './src/bootstrapish.css'
 
 let serverRoot = 'https://2uhq8f5ai5.execute-api.us-west-1.amazonaws.com/dev/';
 
+
 class ClimateHandout extends Component {
   constructor(props) {
     super(props);
-    this.state = { liked: false };
+    this.state = { 
+      stage: 'splash'
+    };
     this.getGraderData()
   }
 
@@ -31,21 +35,37 @@ class ClimateHandout extends Component {
     console.log(response)
   }
 
-  render() {
-    if (this.state.liked) {
-      return 'You liked this.';
-    }
-
+  renderSplash() {
     return (
       <div>
-        <h1>
-          Climate Change for CS109 Students
-        </h1>
-        <p className="climate-subtleHeading">
-          <FontAwesomeIcon style={{'margin-right':'10px'}} icon={faCalendar} />
-          Apr 15th, 2019
+        <h3>
+          Did you know that...</h3>
+          <p style={{'font-size':'1.25em'}}>The computers running Bitcoin's <span style={{'color':'black'}}>blockchain </span> 
+          are using 2,000 kg of oil equivalent every year? 
+          That is more CO2 per year than the country of Chile 🇨🇱.
+          How do the <span style={{'color':'black'}}>decisions </span> we make as engineers and computationally-educated leaders 
+          affect the planet?
         </p>
-        <hr/>
+        <div class="twbs">
+          <button 
+            type="button" class="btn btn-primary btn-lg"
+            onClick={() => this.setState({ stage: 'pretest' }) }
+          >
+            I'm curious!
+          </button>
+        </div>
+        <br/>
+        <img
+          style= {{'width':'100%'}}
+          src = "http://localhost:8000/component/img/splash.jpg"
+        />
+      </div>
+    )
+  }
+
+  renderHook() {
+    return (
+      <div>
         <img
           style= {{'width':'100%'}}
           src = "https://metservice.gov.jm.md-84.webhostbox.net/wp-content/uploads/2017/06/climatechange2-1280x600-1.jpg"
@@ -79,7 +99,53 @@ class ClimateHandout extends Component {
       </div>
     );
   }
+
+  renderPretest() {
+    return (
+      <div>
+        <h3>Before we get started...</h3>
+        <p style={{'font-size':'1.25em'}}>what questions do you have about climate change and CS?</p>
+
+        <div class="twbs">
+          <textarea 
+            style={{'font-size':'1.25em'}}
+            placeholder="Type your questions here..."
+            class="form-control" 
+            id="exampleFormControlTextarea1" 
+            rows="3">
+          </textarea>
+
+        </div>
+      </div>
+    )
+  }
+
+  renderBody() {
+    switch(this.state.stage) {
+      case 'splash': return this.renderSplash();
+      case 'hook': return this.renderHook();
+      case 'pretest': return this.renderPretest();
+      default: return <div>unknown state</div>
+    }
+  }
+
+  render() {
+    let body = this.renderBody()
+    return(
+       <div>
+        <h1>
+          Climate Change for CS109 Students
+        </h1>
+        <p className="climate-subtleHeading">
+          <FontAwesomeIcon style={{'margin-right':'10px'}} icon={faCalendar} />
+          May 9th, 2019
+        </p>
+        <hr/>
+        {body}
+      </div>
+    );
+  }
 }
 
 let domContainer = document.querySelector('#climateHandout');
-ReactDOM.render(<ClimateHandout />, domContainer);
+ReactDOM.render(<ClimateHandout/>, domContainer);
