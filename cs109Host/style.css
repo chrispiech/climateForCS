@@ -1,0 +1,270 @@
+
+
+.container { max-width: 800px; } 
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: white; /*fafcfc*/
+}
+
+p {
+  text-align: justify;
+}
+
+pre {
+  background-color: white;
+}
+
+
+
+li {
+  text-align: justify;
+  margin-bottom: 5px;
+}
+
+code {
+    color:black;
+    padding:0px;
+    border:0px;
+    background-color:transparent;
+    font-weight: bold;
+}
+
+.lectureMaterials {
+  margin-top: 5px;
+}
+
+.inOut {
+  position:absolute;
+  top:150px;
+  color:hsl(0, 0%, 60%);
+}
+
+.classLinks {
+  position:absolute;
+  top:78px;
+  color:hsl(0, 0%, 60%);
+}
+
+.mapOverlay {
+   background:transparent; 
+   position:relative; 
+   width:100%;
+   height:450px; /* your iframe height */
+   top:450px;  /* your iframe height */
+   margin-top:-450px;  /* your iframe height */
+   z-index:9999;
+}
+
+
+.subtleHeading {
+    font-size: 12px;
+    font-weight: 700;
+    color: #959595;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nopadding {
+ padding:0px; 
+}
+
+.caption {
+  min-height:98px;
+}
+
+.calendarCell {
+    height:210px;
+    width:225px;
+    border: 1px solid black;
+    vertical-align:top;
+    padding:10px;
+}
+
+.calendarWeekCell {
+    max-width:50px;
+    vertical-align:top;
+}
+
+.overview-table {
+  overflow:auto;
+
+}
+
+.overview-table-title {
+overflow:hidden;
+}
+
+.overview-table-list{
+  padding-left: 0;
+    list-style: none;
+
+}
+
+.overview-table-list-li {
+    float: left;
+    width: 33.3%;
+    min-height: 150px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 3px solid #fff;
+    margin:0px;
+}
+
+.overview-table-list-li-title {
+    float: left;
+    width: 33.3%;
+    height:30px;
+    padding: 10px;
+    text-align: center;
+}
+
+.overview-class-title {
+  /*text-align:center !important;*/
+}
+
+.counting {
+  background-color:aliceblue;
+}
+
+a:link:after, a:visited:after {
+    content: "";
+}
+
+pre {-moz-tab-size: 3;} /* Code for Firefox */
+pre {-o-tab-size: 3;} /* Code for Opera 10.6-12.1 */
+pre {tab-size: 3;}
+
+.comment {
+  color:#006400;
+  font-weight:bold;
+}
+
+.moment{
+  font-style:italic;
+}
+
+/* navbar
+.navbar-inverse {
+    background-color: #432109 !important;
+    border-color: #432109 !important;
+}
+ */
+
+
+/*.well{
+    background-color: mintcream;
+        border-color: #c0e184;
+}*/
+
+/*.well{
+    background-color: white;
+        border-color: #bce8f1;
+}*/
+
+.well{
+    background-color: aliceblue;
+        border-color: #bce8f1;
+}
+
+.secondHeading {
+  margin-top:20px;
+  margin-bottom:10px;
+}
+
+
+.input {
+  color:blue;
+  font-style: bold;
+}
+
+.sidebarOuter {
+    position: relative;
+}
+@media (min-width: 800px) {
+    .sidebar {
+        width:160px;
+        
+    }
+}
+
+
+
+
+/* INDEX */
+
+#title {
+  font-size:30px;
+    font-weight:bold;
+}
+
+.staffBox {
+  text-align: left !important;
+}
+
+#logoImg {
+  float: left;
+  width: 85px;
+}
+
+#headerText {
+    margin-left:10px;
+    float:left;
+}
+
+.newsfeedTitle {
+  font-size:14px;
+  /*color: olivedrab;*/
+  font-weight:bold;
+}
+
+.sidebaricon {
+  width:15px !important;
+  margin-right: 5px;
+  margin-bottom:5px;
+}
+
+.newsfeedHeader {
+  margin-bottom:5px;
+}
+
+.google-maps {
+        position: relative;
+        padding-bottom: 75%; // This is the aspect ratio
+        height: 0;
+        overflow: hidden;
+    }
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.staffImg {
+  height:120px;
+}
+
+.nopadding {
+   padding: 3 !important;
+   margin: 0 !important;
+}
+
+
+.thumbnail {
+  margin-bottom:5px;
+  white-space: nowrap;
+}
+
+.thumbnailTitle {
+    text-align:center;
+    color:black;
+}
+
+
+/* OVERVIEW */
+
+.overviewIcon {
+  margin-right:7px;
+}
