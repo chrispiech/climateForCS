@@ -1,12 +1,15 @@
 ## To install dependencies
-```> cd handout/component
-> npm install```
-
+```
+> cd handout/component
+> npm install
+```
 
 
 ## To start the handout server locally:
-```> cd handout/component
-> python3 runServer.py```
+```
+> cd handout/component
+> python3 runServer.py
+```
 
 
 
