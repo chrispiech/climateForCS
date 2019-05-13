@@ -7,7 +7,7 @@
 
 ## To start the handout server locally:
 ```
-> cd handout/component
+> cd handout/
 > python3 runServer.py
 ```
 

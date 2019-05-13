@@ -66,6 +66,44 @@ class ClimateHandout extends Component {
     </div>)
   }
 
+  renderClimateInComputing() {
+    return (<div>
+      <h2>Climate Change and Computing</h2>
+      <p>Unlike other types of engineering, we don’t often consider raw materials when we build computational
+        tools. Furthermore, lots of computational infrastructure is built around the “cloud”, which sounds
+        vague and nebulous and even natural. In our day-to-day and operational lives, computing even lets us go 
+        aperless, telecommute, and consolidate many functionalities into one physical device. </p>
+
+      <p>All of these associations abstract away the real resources and environmental effects related to 
+      computation, however. When we consider the full infrastructure, supply chain, and scale of global 
+      computing, another picture emerges. (Data courtesy Bordage 2019)</p>
+      <ul>
+        <li>There are currently about 30 billion computationally-enabled electronic devices worldwide in 2019</li>
+        <li>Computation and the Internet represent 6.4% of electricity consumed worldwide</li>
+        <li>This represents 1.5 billion tons of greenhouse gases emitted annually</li>
+        <li>End users represent 66%, network infrastructure represents 20%, and data centers represent 13% of
+            all energy used</li>
+        <li>The resources and pollution related to the global computational infrastructure are comparable in 
+            magnitude to worldwide commercial air travel, and to the energy use and greenhouse gas output of 
+            some countries!</li>
+      </ul>
+
+      <p>What implications do these statistics have for us as students of Computer Science? It is essential to 
+      understand how the full system of global computing is organized; no line of code is written in a vacuum. 
+      Whether we’re writing a for loop in 106A, deciding whether to incorporate blockchain technology into our 
+      company’s operations, or conducting research that relies on artificial intelligence, the devices, networks, 
+      data centers, and energy we use affect the planet, and our creative decisions matter. Furthermore, this 
+      conversation ties directly into other subjects we learn about in the CS core, like computational efficiency 
+      (big-O), scaling up, and considering edge cases.</p>
+    </div>)
+  }
+
+  renderResourceUse() {
+    return (<div>
+      put resource use here
+    </div>)
+  }
+
   renderMainBody() {
     let energyList = [
       'Running facebook\'s servers for a day',
@@ -99,7 +137,9 @@ class ClimateHandout extends Component {
         </div>
         <br/>
         {this.renderContentBar()}
+        {this.renderClimateInComputing()}
         {this.renderWhatWeKnow()}
+        {this.renderResourceUse()}
         </div>
     )
   }
