@@ -1,12 +1,19 @@
 
-.climateChangeDiv {
-  
+.climate-handout {
+  font-size:1.15em;
 }
 
 .climate-subtleHeading {
-    font-size: 12px;
+		font-size: 0.85em;
     font-weight: 700;
     color: #959595;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.climate-flexContainer {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content:space-between;
+	align-content:space-around;
 }
