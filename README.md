@@ -28,4 +28,5 @@ From handout/component run:
 *Make changes to handout/climate.js.*
 ```
 > webpack ./climate.js -o bundle.js
+or possibly > ./node_modules/.bin/webpack ./climate.js -o bundle.js
 ```
