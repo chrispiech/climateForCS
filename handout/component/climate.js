@@ -120,7 +120,12 @@ var ClimateHandout = function (_Component) {
         React.createElement(
           'p',
           null,
-          'When we consider the full infrastructure, supply chain, and scale of global computing, we see major environmental effects. (Data courtesy Bordage 2019)'
+          'When we consider the full infrastructure, supply chain, and scale of global computing, we see major environmental effects.',
+          React.createElement(
+            'sup',
+            null,
+            '1'
+          )
         ),
         React.createElement(
           'ul',
@@ -160,7 +165,7 @@ var ClimateHandout = function (_Component) {
           React.createElement(
             'li',
             null,
-            'End users represent 66%, network infrastructure represents 20%, and data centers represent 13% of all energy used'
+            'End users represent 66%, network infrastructure represents 20%, and data centers represent 13% of all energy used (rounded)'
           ),
           React.createElement(
             'li',
@@ -171,8 +176,23 @@ var ClimateHandout = function (_Component) {
         React.createElement(
           'p',
           null,
-          'What implications do these numbers have for us as students of Computer Science? For starters, no line of code is written in a vacuum. Whether we\u2019re writing a for loop in 106A, deciding whether to incorporate blockchain technology into our company\u2019s operations, or conducting research that relies on artificial intelligence, the devices, networks, data centers, and energy we use affect the planet, and our creative decisions matter.'
-        )
+          'What implications do these numbers have for us as students of Computer Science? For starters, no line of code is written in a vacuum. Whether we\u2019re writing a for loop in 106A, deciding whether to incorporate blockchain technology into our company\u2019s operations, or conducting research that relies on artificial intelligence, ',
+          React.createElement(
+            'b',
+            null,
+            'the devices, networks, data centers, and energy we use affect the planet, and our decisions matter.'
+          )
+        ),
+        React.createElement('br', null),
+        React.createElement(
+          'center',
+          null,
+          React.createElement('img', {
+            style: { 'width': '80%' },
+            src: 'http://localhost:8000/component/img/energy-desk.jpg'
+          })
+        ),
+        React.createElement('br', null)
       );
     }
   }, {
@@ -195,19 +215,23 @@ var ClimateHandout = function (_Component) {
           'ol',
           null,
           React.createElement(
-            'li',
+            'b',
             null,
-            'the raw materials used to produce equipment,'
-          ),
-          React.createElement(
-            'li',
-            null,
-            'the energy needed to produce, transport, and serve equipment,'
-          ),
-          React.createElement(
-            'li',
-            null,
-            'and the end-of-life pollution of the components during disposal.'
+            React.createElement(
+              'li',
+              null,
+              'the raw materials used to produce equipment,'
+            ),
+            React.createElement(
+              'li',
+              null,
+              'the energy needed to produce, transport, and serve equipment,'
+            ),
+            React.createElement(
+              'li',
+              null,
+              'and the end-of-life pollution of the components during disposal.'
+            )
           )
         ),
         this.renderEnergyUse(),
@@ -228,7 +252,32 @@ var ClimateHandout = function (_Component) {
         React.createElement(
           'p',
           null,
-          'Energy consumption is a big deal when it comes to Bitcoin. If Bitcoin mining were a country, its annual energy consumption would rank 43rd in the world - between Switzerland and Colombia. This energy consumption creates a huge demand for cheap energy in order to keep the mining profitable, so most Bitcoin mining occurs in locations where this is possible: China, Georgia, and the US. China, in particular, represents the largest single supplier of energy for Bitcoin mining, and much of this energy omes from coal. This means that Bitcoin mining has what we call a high \u201Ccarbon intensity\u201D: for every kilowatt-hour of energy used, the amount in grams of carbon dioxide, or equivalent grams of other greenhouse gases like methane, that is emitted (written as gCO2eq/kWh). (Source: Digiconomy)'
+          'Energy consumption is a big deal when it comes to Bitcoin. If Bitcoin mining were a country, its annual energy consumption would rank 43rd in the world - between Switzerland and Colombia. This energy consumption ',
+          React.createElement(
+            'a',
+            { href: 'https://arstechnica.com/tech-policy/2017/12/bitcoins-insane-energy-consumption-explained/', target: '_blank' },
+            'creates a huge demand for cheap energy in order to keep the mining profitable'
+          ),
+          ', so most Bitcoin mining occurs in locations where this is possible: China, Georgia, and the US. China, in particular, represents the largest single supplier of energy for Bitcoin mining, and much of this energy comes from coal, which makes it a very \u201Ccarbon intense\u201D activity.',
+          React.createElement(
+            'sup',
+            null,
+            '2'
+          ),
+          ' '
+        ),
+        React.createElement(
+          'a',
+          { href: 'https://digiconomist.net/bitcoin-energy-consumption', target: '_blank' },
+          'See live chart here'
+        ),
+        React.createElement(
+          'center',
+          null,
+          React.createElement('img', {
+            style: { 'width': '80%' },
+            src: 'http://localhost:8000/component/img/bitcoin-consumption.png'
+          })
         ),
         React.createElement(
           'a',
@@ -248,23 +297,75 @@ var ClimateHandout = function (_Component) {
         React.createElement(
           'p',
           null,
-          'This can feel extremely abstract and far away (unless your roommate has expressed frustration that they ',
+          'This can feel extremely abstract and far away (unless your roommate is mad they ',
           React.createElement(
             'a',
-            { href: 'https://uit.stanford.edu/news/cryptocurrency-mining' },
+            { href: 'https://uit.stanford.edu/news/cryptocurrency-mining', target: '_blank' },
             'can\u2019t use dorm electricity to mine Bitcoin'
           ),
-          '). But the energy, and thus carbon, impacts of computing are non-negligible closer to home. A single domestic Internet router, on all day every day, consumes as much electricity as a small fridge. And the code we write, too, can be more or less energy-efficient depending on its computational efficiency.'
+          '). But the energy, and thus carbon, impacts of computing are non-negligible closer to home. ',
+          React.createElement(
+            'b',
+            null,
+            'A single domestic Internet router, on all day every day, consumes as much electricity as a small fridge.'
+          ),
+          React.createElement(
+            'sup',
+            null,
+            '1'
+          ),
+          ' And the code we write, too, can be more or less energy-efficient depending on its computational efficiency.'
         ),
+        React.createElement(
+          'a',
+          { 'data-toggle': 'collapse', href: '#facebook-energy-collapse', 'aria-expanded': 'false', 'aria-controls': 'collapseExample' },
+          'Learn about how Facebook drastically reduced its energy use with one simple trick'
+        ),
+        React.createElement(
+          'div',
+          { 'class': 'collapse', id: 'facebook-energy-collapse' },
+          React.createElement(
+            'p',
+            null,
+            'Luckily, today\u2019s compilers make our code ',
+            React.createElement(
+              'i',
+              null,
+              'much'
+            ),
+            ' more efficient when it\u2019s executed. In 2010, for example, Facebook compiled the PHP running on its servers into C++, reducing by a factor of about 5 the number of servers needed to operate the site - a huge win for energy efficiency and hardware use!',
+            React.createElement(
+              'sup',
+              null,
+              '3'
+            ),
+            ' But compilers are only the first step. Compilers can provide speed-ups and clever uses of memory, but they can\u2019t really fix an unnecessarily complex algorithm. Those optimizations require human ingenuity.'
+          )
+        ),
+        React.createElement('p', null),
         React.createElement(
           'p',
           null,
-          'Luckily, today\u2019s compilers do a great job at making the code we write more efficient by the time it\u2019s executed. In 2010, for example, Facebook compiled the PHP running on its servers into C++, reducing by a factor of about 5 the number of servers needed to operate the site - a huge win for energy efficiency and hardware use. But compilers are only the first step. Compilers can provide speed-ups and clever uses of memory, but they can\u2019t fundamentally alter an unnecessarily complex algorithm. Those optimizations require uman ingenuity.'
+          'Complex algorithms, too, generally don\u2019t operate in isolation, so when we talk about energy efficiency we have to think about digital services at a system level. In other words, the individual executables we\u2019re used to writing in an academic class might instead be sent over networks, duplicated and run hundreds of thousands of times on a variety of systems, require outside packages to be imported or, themselves, underly larger and more complex software systems and services. ',
+          React.createElement(
+            'b',
+            null,
+            'Indeed, the main energy reduction lever in software is simply to eliminate functionality that is never used; usually this represents around 70% of any particular service.'
+          ),
+          ' This question requires creative and person-to-person approaches rather than only clever coding - although clever coding is important too.',
+          React.createElement(
+            'sup',
+            null,
+            '1'
+          )
         ),
         React.createElement(
-          'p',
+          'center',
           null,
-          'Complex algorithms, too, generally don\u2019t operate in isolation. Even the most streamlined and efficient of algorithms usually operates within a networked system, which means that when we talk about energy efficiency we have to think about digital services at a system level. In other words, the individual executables we\u2019re used to writing in an academic class might instead be sent over networks, duplicated and run hundreds of thousands of times on a variety of systems, require outside packages to be imported or, themselves, underly larger and more complex software systems and services. Rather than looking at each brick, we also need to step back and look at the efficiency of the entire building. Indeed, the main energy reduction lever in software is to eliminate functionality that is never used; usually this represents around 70% of any particular service. This question becomes a management, marketing, and design question rather than purely an engineering one, and requires creative and person-to-person approaches rather than only clever coding - although clever coding is important too. (Source: Bordage)'
+          React.createElement('img', {
+            style: { 'width': '80%' },
+            src: 'http://localhost:8000/component/img/mitigation.png'
+          })
         )
       );
     }
@@ -277,12 +378,24 @@ var ClimateHandout = function (_Component) {
         React.createElement(
           'h3',
           null,
-          'Manufacturing'
+          'Manufacturing and Disposal'
         ),
         React.createElement(
           'p',
           null,
-          'Most of the carbon emissions and other environmental effects of computing come not from energy use during operation, but from the energy and natural resources involved in producing and discarding physical equipment. A typical laptop, for example, is responsible for about 25 kg CO2eq/year, but producing it emits 200-400 kg. As a lower bound, we\u2019d need to use each laptop almost a decade in order for its energy use during operation to dominate its environmental impacts. In order to mitigate these impacts, then, it\u2019s important that we focus on building a global computational system where we produce less equipment and use each device for more time.'
+          'Most of the carbon emissions and other environmental effects of computing come not from energy use during operation, but from the energy and natural resources involved in producing and discarding physical equipment. ',
+          React.createElement(
+            'b',
+            null,
+            'A typical laptop, for example, is responsible for about 25 kg CO',
+            React.createElement(
+              'sub',
+              null,
+              '2'
+            ),
+            'eq/year, but producing it emits 200-400 kg.'
+          ),
+          ' As a lower bound, we\u2019d need to use each laptop almost a decade in order for its energy use during operation to dominate its environmental impacts. In order to mitigate these impacts, then, it\u2019s important that we focus on building a global computational system where we produce less equipment and use each device for more time.'
         ),
         React.createElement(
           'a',
@@ -295,7 +408,13 @@ var ClimateHandout = function (_Component) {
           React.createElement(
             'p',
             null,
-            'One major concern with Bitcoin, and all computation, is what happens to the machines used to mine it after they cycle out of service. The most popular hardware used to mine Bitcoin, the \u201CApplication-Specific Integrated Circuit (ASIC) miner, cannot be repurposed because it is hardwired solely for mining Bitcoin. This means it is likely to wind up with other cast-off electronics in a landfill or incinerator, causing damage to the environment\u201D. Bitcoin alone produces as much electronic waste annually as a small country, like Luxembourg.'
+            'One major concern with Bitcoin, and all computation, is what happens to the machines used to mine it after they cycle out of service. The most popular hardware used to mine Bitcoin, the \u201CApplication-Specific Integrated Circuit (ASIC) miner, cannot be repurposed because it is hardwired solely for mining Bitcoin. This means it is likely to wind up with other cast-off electronics in a landfill or incinerator, causing damage to the environment\u201D.',
+            React.createElement(
+              'sup',
+              null,
+              '2'
+            ),
+            ' Bitcoin alone produces as much electronic waste annually as a small country, like Luxembourg.'
           )
         ),
         React.createElement('p', null),
@@ -326,6 +445,206 @@ var ClimateHandout = function (_Component) {
             'li',
             null,
             'Promote backwards compatibility and hardware versatility'
+          )
+        ),
+        React.createElement('br', null),
+        React.createElement(
+          'center',
+          null,
+          React.createElement('img', {
+            style: { 'width': '80%' },
+            src: 'http://localhost:8000/component/img/laptop-plant.jpg'
+          })
+        ),
+        React.createElement('br', null)
+      );
+    }
+  }, {
+    key: 'renderEthics',
+    value: function renderEthics() {
+      /*return (
+        <div id="handout-ethics-sxn">
+          <h3>Ethics and Psychology related to CS!!</h3>
+         </div>
+      )*/
+    }
+  }, {
+    key: 'renderHelps',
+    value: function renderHelps() {
+      return React.createElement(
+        'div',
+        { id: 'handout-helps-sxn' },
+        React.createElement(
+          'h2',
+          null,
+          'What kind of CS helps?'
+        ),
+        React.createElement(
+          'p',
+          null,
+          'Climate change gives us plenty to worry about, and our responsibility as computer scientists can seem heavy. At the scale of global computation, though, small changes to improve efficiency, reduce unnecessary functionality, and prolong hardware lifespan can prevent a great deal of energy use and pollution, simply because of how big the system is.'
+        ),
+        React.createElement(
+          'center',
+          null,
+          React.createElement('img', {
+            style: { 'width': '80%' },
+            src: 'http://localhost:8000/component/img/changes-now-later.png'
+          })
+        ),
+        React.createElement(
+          'p',
+          null,
+          'Moreover, we can think of computing as a resource just like any other - not an infinite or environmentally-neutral one, but one that we certainly need to use in many areas to face the challenges of the 21st century. Computational tools allow us to manage energy grids, monitor emissions, and even model climate change itself. With some engineering ingenuity and contextual awareness, efficient computation has a great deal of importance for the future of our planet.'
+        ),
+        React.createElement('br', null),
+        React.createElement(
+          'center',
+          null,
+          React.createElement('img', {
+            style: { 'width': '80%' },
+            src: 'http://localhost:8000/component/img/splash.jpg'
+          })
+        ),
+        React.createElement('br', null),
+        React.createElement(
+          'p',
+          null,
+          React.createElement(
+            'b',
+            null,
+            'For further reading:'
+          )
+        ),
+        React.createElement(
+          'ul',
+          null,
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: 'https://arstechnica.com/tech-policy/2017/12/bitcoins-insane-energy-consumption-explained/', target: '_blank' },
+              'Bitcoin\'s Energy Consumption, Explained'
+            ),
+            ' (Ars Technica)'
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: 'http://www.clickclean.org/usa/en/', target: '_blank' },
+              'Clicking Clean: Who is Winning the Race to Build a Cleaner Internet?'
+            ),
+            ' (Greenpeace)'
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: 'https://get-green-now.com/reduce-ewaste-hazards/', target: '_blank' },
+              'How to Reduce Electronic Waste'
+            ),
+            ' (Get Green Now)'
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: 'https://www.nten.org/article/refurbished-technology-an-insiders-guide/', target: '_blank' },
+              'Refurbished Technology: An Insider\'s Guide'
+            ),
+            ' (Nonprofit Technology Enterprise Network)'
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: 'https://youmightnotneed.com/', target: '_blank' },
+              'You Might Not Need'
+            ),
+            ': an open-source collection of resources for building lightweight websites (',
+            React.createElement(
+              'a',
+              { href: 'https://github.com/cedmax/youmightnotneed', target: '_blank' },
+              'GitHub'
+            ),
+            ')'
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: 'https://research.fb.com/wp-content/uploads/2016/11/the-hiphop-compiler-for-php.pdf', target: '_blank' },
+              'The HipHop Compiler for PHP'
+            ),
+            ' (original Facebook paper - also see ',
+            React.createElement(
+              'a',
+              { href: 'https://www.facebook.com/notes/facebook-engineering/hiphop-for-php-move-fast/280583813919/', target: '_blank' },
+              'this post'
+            ),
+            ').'
+          )
+        )
+      );
+    }
+  }, {
+    key: 'renderFootnotes',
+    value: function renderFootnotes() {
+      return React.createElement(
+        'div',
+        { id: 'handout-footnotes-sxn' },
+        React.createElement(
+          'h3',
+          null,
+          'Sources'
+        ),
+        React.createElement(
+          'ol',
+          null,
+          React.createElement(
+            'li',
+            null,
+            'Courtesy Fr\xE9d\xE9ric Bordage, 2019, personal communications. See his site, ',
+            React.createElement(
+              'a',
+              { href: 'https://www.greenit.fr/', target: '_blank' },
+              'GreenIT.fr'
+            ),
+            ' (in French).'
+          ),
+          React.createElement(
+            'li',
+            null,
+            '"Bitcoin Energy Consumption Index", ',
+            React.createElement(
+              'a',
+              { href: 'https://digiconomist.net/bitcoin-energy-consumption', target: '_blank' },
+              'Digiconomist 2019'
+            ),
+            ', and related ',
+            React.createElement(
+              'a',
+              { href: 'https://digiconomist.net/renewable-energy-will-not-solve-bitcoins-sustainability-problem/', taget: '_blank' },
+              'press release'
+            ),
+            '.'
+          ),
+          React.createElement(
+            'li',
+            null,
+            React.createElement(
+              'a',
+              { href: 'https://research.fb.com/wp-content/uploads/2016/11/the-hiphop-compiler-for-php.pdf', target: '_blank' },
+              'The HipHop Compiler for PHP'
+            ),
+            ', Facebook, 2012.'
           )
         )
       );
@@ -377,8 +696,10 @@ var ClimateHandout = function (_Component) {
         React.createElement('br', null),
         this.renderContentBar_Links(),
         this.renderClimateInComputing(),
-        this.renderWhatWeKnow(),
-        this.renderResourceUse()
+        this.renderResourceUse(),
+        this.renderEthics(),
+        this.renderHelps(),
+        this.renderFootnotes()
       );
     }
   }, {
@@ -400,8 +721,6 @@ var ClimateHandout = function (_Component) {
   }, {
     key: 'renderContentBar_Links',
     value: function renderContentBar_Links() {
-      var _this5 = this;
-
       var btnClass = "button btn btn-link";
       return React.createElement(
         'div',
@@ -427,32 +746,18 @@ var ClimateHandout = function (_Component) {
             'What\'s knowable about climate?'
           ),
           React.createElement(
-            'button',
+            'a',
             {
-              type: 'button', className: btnClass,
-              onClick: function onClick() {
-                return _this5.askQuestion();
-              }
+              className: btnClass,
+              href: '#handout-resources-sxn'
             },
-            'Energy use of our algorithms'
+            'Resource use of computing'
           ),
           React.createElement(
-            'button',
+            'a',
             {
-              type: 'button', className: btnClass,
-              onClick: function onClick() {
-                return _this5.askQuestion();
-              }
-            },
-            'Psycology and ethics'
-          ),
-          React.createElement(
-            'button',
-            {
-              type: 'button', className: btnClass,
-              onClick: function onClick() {
-                return _this5.askQuestion();
-              }
+              className: btnClass,
+              href: '#handout-helps-sxn'
             },
             'CS that helps'
           )
@@ -465,7 +770,7 @@ var ClimateHandout = function (_Component) {
   }, {
     key: 'renderContentBar',
     value: function renderContentBar() {
-      var _this6 = this;
+      var _this5 = this;
 
       var btnClass = "btn btn-link";
       return React.createElement(
@@ -488,7 +793,7 @@ var ClimateHandout = function (_Component) {
             {
               type: 'button', className: btnClass,
               onClick: function onClick() {
-                return _this6.askQuestion();
+                return _this5.askQuestion();
               }
             },
             'What\'s knowable about climate?'
@@ -498,27 +803,27 @@ var ClimateHandout = function (_Component) {
             {
               type: 'button', className: btnClass,
               onClick: function onClick() {
-                return _this6.askQuestion();
+                return _this5.askQuestion();
               }
             },
-            'Energy use of our algorithms'
+            'Energy use of computing'
           ),
           React.createElement(
             'button',
             {
               type: 'button', className: btnClass,
               onClick: function onClick() {
-                return _this6.askQuestion();
+                return _this5.askQuestion();
               }
             },
-            'Psycology and ethics'
+            'Psychology and ethics'
           ),
           React.createElement(
             'button',
             {
               type: 'button', className: btnClass,
               onClick: function onClick() {
-                return _this6.askQuestion();
+                return _this5.askQuestion();
               }
             },
             'CS that helps'
@@ -560,7 +865,7 @@ var ClimateHandout = function (_Component) {
           null,
           React.createElement('img', {
             style: { 'width': '80%' },
-            src: 'http://localhost:8000/component/img/splash.jpg'
+            src: 'http://localhost:8000/component/img/laptop-outside.jpg'
           })
         ),
         React.createElement(
@@ -577,7 +882,13 @@ var ClimateHandout = function (_Component) {
             { style: { 'color': 'black' } },
             'blockchain '
           ),
-          'are using 2,000 kg of oil \uD83D\uDEE2\uFE0Fequivalent every year? That is more CO2 per year than the country of Chile \uD83C\uDDE8\uD83C\uDDF1. How do the ',
+          'are using 2,000 kg of oil \uD83D\uDEE2\uFE0Fequivalent every year? That is more CO',
+          React.createElement(
+            'sub',
+            null,
+            '2'
+          ),
+          ' per year than the country of Chile \uD83C\uDDE8\uD83C\uDDF1. How do the ',
           React.createElement(
             'span',
             { style: { 'color': 'black' } },

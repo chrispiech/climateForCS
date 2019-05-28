@@ -70,13 +70,13 @@ class ClimateHandout extends Component {
     return (<div id="handout-stats-sxn">
       <h2>Climate Change and Computing</h2>
       <p>When we consider the full infrastructure, supply chain, and scale of global 
-      computing, we see major environmental effects. (Data courtesy Bordage 2019)</p>
+      computing, we see major environmental effects.<sup>1</sup></p>
       <ul>
         <li>There are currently about <b>30 billion computationally-enabled electronic devices</b> worldwide in 2019</li>
         <li>Computation and the Internet represent <b>6.4% of electricity consumed worldwide</b></li>
         <li>This represents <b>1.5 billion tons of greenhouse gases</b> emitted annually</li>
         <li>End users represent 66%, network infrastructure represents 20%, and data centers represent 13% of
-            all energy used</li>
+            all energy used (rounded)</li>
         <li>The resources and pollution related to the global computational infrastructure are comparable in 
             magnitude to worldwide commercial air travel, and to the energy use and greenhouse gas output of 
             some countries!</li>
@@ -85,8 +85,13 @@ class ClimateHandout extends Component {
       <p>What implications do these numbers have for us as students of Computer Science? For starters, no line of 
       code is written in a vacuum. 
       Whether we’re writing a for loop in 106A, deciding whether to incorporate blockchain technology into our 
-      company’s operations, or conducting research that relies on artificial intelligence, the devices, networks, 
-      data centers, and energy we use affect the planet, and our creative decisions matter.</p>
+      company’s operations, or conducting research that relies on artificial intelligence, <b>the devices, networks, 
+      data centers, and energy we use affect the planet, and our decisions matter.</b></p><br/>
+
+      <center><img
+          style= {{'width':'80%'}}
+          src = "http://localhost:8000/component/img/energy-desk.jpg"
+        /></center><br/>
     </div>)
   }
 
@@ -94,11 +99,11 @@ class ClimateHandout extends Component {
     return (<div id="handout-resources-sxn">
       <h2>Where are resources used?</h2>
       <p>The design and engineering decisions we make in Computer Science impact the planet in three major ways:</p>
-      <ol>
+      <ol><b>
         <li>the raw materials used to produce equipment,</li>
         <li>the energy needed to produce, transport, and serve equipment,</li>
         <li>and the end-of-life pollution of the components during disposal.</li>
-      </ol>
+      </b></ol>
 
       {this.renderEnergyUse()}
       {this.renderManufacturingUse()}
@@ -110,12 +115,16 @@ class ClimateHandout extends Component {
       <h3>Energy</h3>
       <p>Energy consumption is a big deal when it comes to Bitcoin. If Bitcoin mining were a country, its
        annual energy consumption would rank 43rd in the world - between Switzerland and Colombia. This energy 
-       consumption creates a huge demand for cheap energy in order to keep the mining profitable, so most 
+       consumption <a href="https://arstechnica.com/tech-policy/2017/12/bitcoins-insane-energy-consumption-explained/" target="_blank">creates a 
+       huge demand for cheap energy in order to keep the mining profitable</a>, so most 
        Bitcoin mining occurs in locations where this is possible: China, Georgia, and the US. China, in 
        particular, represents the largest single supplier of energy for Bitcoin mining, and much of this energy 
-       omes from coal. This means that Bitcoin mining has what we call a high “carbon intensity”: for every 
-       kilowatt-hour of energy used, the amount in grams of carbon dioxide, or equivalent grams of other 
-       greenhouse gases like methane, that is emitted (written as gCO2eq/kWh). (Source: Digiconomy)</p>
+       comes from coal, which makes it a very “carbon intense” activity.<sup>2</sup> </p>
+       <a href="https://digiconomist.net/bitcoin-energy-consumption" target="_blank">See live chart here</a>
+       <center><img
+          style= {{'width':'80%'}}
+          src = "http://localhost:8000/component/img/bitcoin-consumption.png"
+        /></center>
       <a data-toggle="collapse" href="#responsible-energy-collapse" aria-expanded="false" aria-controls="collapseExample">
         Learn more about sourcing responsible energy for computing
       </a>
@@ -131,39 +140,45 @@ class ClimateHandout extends Component {
          change is only going to exacerbate the differences between summer and winter power availability, raising 
          demand for coal during dry months.</p>
       </div><p></p>
-      <p>This can feel extremely abstract and far away (unless your roommate has expressed frustration that 
-        they <a href="https://uit.stanford.edu/news/cryptocurrency-mining">can’t use dorm electricity to mine 
-        Bitcoin</a>). But the energy, and thus carbon, impacts of computing are non-negligible closer to home. 
-      A single domestic Internet router, on all day every day, consumes as much electricity as a small fridge. 
-      And the code we write, too, can be more or less energy-efficient depending on its computational efficiency.</p>
-      <p>Luckily, today’s compilers do a great job at making the code we write more efficient by the time it’s 
+      <p>This can feel extremely abstract and far away (unless your roommate is mad 
+        they <a href="https://uit.stanford.edu/news/cryptocurrency-mining" target="_blank">can’t use dorm electricity to mine 
+        Bitcoin</a>). But the energy, and thus carbon, impacts of computing are non-negligible closer to 
+      home. <b>A single domestic Internet router, on all day every day, consumes as much electricity as a small 
+      fridge.</b><sup>1</sup> And the code we write, too, can be more or less energy-efficient depending on its 
+      computational efficiency.</p>
+      <a data-toggle="collapse" href="#facebook-energy-collapse" aria-expanded="false" aria-controls="collapseExample">
+        Learn about how Facebook drastically reduced its energy use with one simple trick
+      </a>
+      <div class="collapse" id="facebook-energy-collapse">
+      <p>Luckily, today’s compilers make our code <i>much</i> more efficient when it’s 
       executed. In 2010, for example, Facebook compiled the PHP running on its servers into C++, reducing by a 
       factor of about 5 the number of servers needed to operate the site - a huge win for energy efficiency and 
-      hardware use. But compilers are only the first step. Compilers can provide speed-ups and clever uses of 
-      memory, but they can’t fundamentally alter an unnecessarily complex algorithm. Those optimizations require 
-      uman ingenuity.</p>
-      <p>Complex algorithms, too, generally don’t operate in isolation. Even the most streamlined and efficient 
-      of algorithms usually operates within a networked system, which means that when we talk about energy 
+      hardware use!<sup>3</sup> But compilers are only the first step. Compilers can provide speed-ups and clever uses of 
+      memory, but they can’t really fix an unnecessarily complex algorithm. Those optimizations require 
+      human ingenuity.</p></div><p></p>
+      <p>Complex algorithms, too, generally don’t operate in isolation, so when we talk about energy 
       efficiency we have to think about digital services at a system level. In other words, the individual 
       executables we’re used to writing in an academic class might instead be sent over networks, duplicated 
       and run hundreds of thousands of times on a variety of systems, require outside packages to be imported or, 
-      themselves, underly larger and more complex software systems and services. Rather than looking 
-      at each brick, we also need to step back and look at the efficiency of the entire building. Indeed, the 
+      themselves, underly larger and more complex software systems and services. <b>Indeed, the 
       main energy reduction lever in software 
-      is to eliminate functionality that is never used; usually this represents around 70% of any particular 
-      service. This question becomes a management, marketing, and design question rather than purely an 
-      engineering one, and requires creative and person-to-person approaches rather than only clever coding - 
-      although clever coding is important too. (Source: Bordage)</p>
+      is simply to eliminate functionality that is never used; usually this represents around 70% of any particular 
+      service.</b> This question requires creative and person-to-person approaches rather than only clever coding - 
+      although clever coding is important too.<sup>1</sup></p>
+      <center><img
+          style= {{'width':'80%'}}
+          src = "http://localhost:8000/component/img/mitigation.png"
+        /></center>
     </div>)
   }
 
   renderManufacturingUse() {
     return (<div id="handout-manufacturing-sxn">
-      <h3>Manufacturing</h3>
+      <h3>Manufacturing and Disposal</h3>
       <p>Most of the carbon emissions and other environmental effects of computing come not from energy use 
       during operation, but from the energy and natural resources involved in producing and discarding physical 
-      equipment. A typical laptop, for example, is responsible for about 25 kg CO2eq/year, but producing it emits 
-      200-400 kg. As a lower bound, we’d need to use each laptop almost a decade in order for its energy use 
+      equipment. <b>A typical laptop, for example, is responsible for about 25 kg CO<sub>2</sub>eq/year, but producing it emits 
+      200-400 kg.</b> As a lower bound, we’d need to use each laptop almost a decade in order for its energy use 
       during operation to dominate its environmental impacts. In order to mitigate these impacts, then, it’s 
       important that we focus on building a global computational system where we produce less equipment and use 
       each device for more time.</p>
@@ -175,7 +190,7 @@ class ClimateHandout extends Component {
         after they cycle out of service. The most popular hardware used to mine Bitcoin, the “Application-Specific 
         Integrated Circuit (ASIC) miner, cannot be repurposed because it is hardwired solely for mining Bitcoin. 
         This means it is likely to wind up with other cast-off electronics in a landfill or incinerator, causing 
-        damage to the environment”. Bitcoin alone produces as much electronic waste annually as a small country, 
+        damage to the environment”.<sup>2</sup> Bitcoin alone produces as much electronic waste annually as a small country, 
         like Luxembourg.</p>
       </div>
       <p></p><p>
@@ -185,8 +200,72 @@ class ClimateHandout extends Component {
         <li>Promote device refurbishment and repairability</li>
         <li>Source materials in ecologically responsible ways</li>
         <li>Promote backwards compatibility and hardware versatility</li>
-      </ul>
+      </ul><br/>
+      <center><img
+          style= {{'width':'80%'}}
+          src = "http://localhost:8000/component/img/laptop-plant.jpg"
+        /></center><br/>
     </div>)
+  }
+
+  renderEthics() {
+    /*return (
+      <div id="handout-ethics-sxn">
+        <h3>Ethics and Psychology related to CS!!</h3>
+
+      </div>
+    )*/
+  }
+
+  renderHelps() {
+    return (
+      <div id="handout-helps-sxn">
+        <h2>What kind of CS helps?</h2>
+        <p>Climate change gives us plenty to worry about, and our responsibility as computer scientists
+        can seem heavy. At the scale of global computation, though, small changes to improve efficiency,
+        reduce unnecessary functionality, and prolong hardware lifespan can prevent a great deal of energy
+        use and pollution, simply because of how big the system is.</p>
+        <center><img
+          style= {{'width':'80%'}}
+          src = "http://localhost:8000/component/img/changes-now-later.png"
+        /></center>
+        <p>Moreover, we can think of computing as a resource just like any other - not an infinite or
+        environmentally-neutral one, but one that we certainly need to use in many areas to face the challenges
+        of the 21st century. Computational tools allow us to manage energy grids, monitor emissions, and even model 
+        climate change itself. With some engineering ingenuity and contextual awareness, efficient computation 
+        has a great deal of importance for the future of our planet.</p><br/>
+        <center><img
+          style= {{'width':'80%'}}
+          src = "http://localhost:8000/component/img/splash.jpg"
+        /></center>
+        <br/><p><b>For further reading:</b></p>
+        <ul>
+          <li><a href="https://arstechnica.com/tech-policy/2017/12/bitcoins-insane-energy-consumption-explained/" target="_blank">Bitcoin's Energy Consumption, Explained</a> (Ars Technica)</li>
+          <li><a href="http://www.clickclean.org/usa/en/" target="_blank">Clicking Clean: Who is Winning the Race to Build a Cleaner Internet?</a> (Greenpeace)</li>
+          <li><a href="https://get-green-now.com/reduce-ewaste-hazards/" target="_blank">How to Reduce Electronic Waste</a> (Get Green Now)</li>
+          <li><a href="https://www.nten.org/article/refurbished-technology-an-insiders-guide/" target="_blank">Refurbished Technology: An Insider's Guide</a> (Nonprofit Technology Enterprise Network)</li>
+          <li><a href="https://youmightnotneed.com/" target="_blank">You Might Not Need</a>: an open-source collection of resources for building lightweight websites (<a href="https://github.com/cedmax/youmightnotneed" target="_blank">GitHub</a>)</li>
+          <li><a href="https://research.fb.com/wp-content/uploads/2016/11/the-hiphop-compiler-for-php.pdf" target="_blank">The HipHop Compiler for PHP</a> (original Facebook paper - also see <a href="https://www.facebook.com/notes/facebook-engineering/hiphop-for-php-move-fast/280583813919/" target="_blank">this post</a>).</li>
+        </ul>
+      </div>
+    )
+  }
+
+  renderFootnotes() {
+    return (
+      <div id="handout-footnotes-sxn">
+        <h3>Sources</h3>
+        <ol>
+          <li>Courtesy Frédéric Bordage, 2019, personal communications. See his 
+          site, <a href="https://www.greenit.fr/" target="_blank">GreenIT.fr</a> (in French).</li>
+          <li>"Bitcoin Energy Consumption Index", <a href="https://digiconomist.net/bitcoin-energy-consumption" target="_blank">
+          Digiconomist 2019</a>, 
+          and related <a href="https://digiconomist.net/renewable-energy-will-not-solve-bitcoins-sustainability-problem/" taget="_blank">press release</a>.</li>
+          <li><a href="https://research.fb.com/wp-content/uploads/2016/11/the-hiphop-compiler-for-php.pdf" target="_blank">The 
+          HipHop Compiler for PHP</a>, Facebook, 2012.</li>
+        </ol>
+      </div>
+    )
   }
 
   renderMainBody() {
@@ -223,8 +302,11 @@ class ClimateHandout extends Component {
         <br/>
         {this.renderContentBar_Links()}
         {this.renderClimateInComputing()}
-        {this.renderWhatWeKnow()}
+        {/*this.renderWhatWeKnow()*/}
         {this.renderResourceUse()}
+        {this.renderEthics()}
+        {this.renderHelps()}
+        {this.renderFootnotes()}
         </div>
     )
   }
@@ -254,24 +336,18 @@ class ClimateHandout extends Component {
           >
             What's knowable about climate?
           </a>
-          <button 
-            type="button" className={btnClass}
-            onClick={() => this.askQuestion() }
+          <a 
+            className={btnClass}
+            href="#handout-resources-sxn"
           >
-            Energy use of our algorithms
-          </button>
-          <button 
-            type="button" className={btnClass}
-            onClick={() => this.askQuestion() }
-          >
-            Psycology and ethics
-          </button>
-          <button 
-            type="button" className={btnClass}
-            onClick={() => this.askQuestion() }
+            Resource use of computing
+          </a>
+          <a 
+            className={btnClass}
+            href="#handout-helps-sxn"
           >
             CS that helps
-          </button>
+          </a>
         </div>
       </div>
     )
@@ -298,13 +374,13 @@ class ClimateHandout extends Component {
             type="button" className={btnClass}
             onClick={() => this.askQuestion() }
           >
-            Energy use of our algorithms
+            Energy use of computing
           </button>
           <button 
             type="button" className={btnClass}
             onClick={() => this.askQuestion() }
           >
-            Psycology and ethics
+            Psychology and ethics
           </button>
           <button 
             type="button" className={btnClass}
@@ -338,12 +414,12 @@ class ClimateHandout extends Component {
         <hr/>
         <center><img
           style= {{'width':'80%'}}
-          src = "http://localhost:8000/component/img/splash.jpg"
+          src = "http://localhost:8000/component/img/laptop-outside.jpg"
         /></center>
         <h3>Bitcoin uses a country's worth of energy:</h3>
           <p>Did you know that the computers running Bitcoin's <span style={{'color':'black'}}>blockchain </span> 
           are using 2,000 kg of oil 🛢️equivalent every year? 
-          That is more CO2 per year than the country of Chile 🇨🇱.
+          That is more CO<sub>2</sub> per year than the country of Chile 🇨🇱.
           How do the <span style={{'color':'black'}}>decisions </span> we make as engineers and computationally-educated leaders 
           affect the planet? What is blockchain? Read on!
         </p>
