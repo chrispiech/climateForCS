@@ -55,16 +55,6 @@ class ClimateHandout extends Component {
     )
   }
 
-  renderEnergyUse() {
-    return (<div>
-      <p>What do you think takes the most energy? Sort the list from most energy to least energy:</p>
-        <b style ={{'color':'salmon'}}>Top of the list: Most energy</b>
-        <SortQuiz 
-          options = {energyList}
-        />
-        <b style ={{'color':'steelblue'}}>Bottom of the list: Least Energy</b>
-    </div>)
-  }
 
   renderClimateInComputing() {
     return (<div id="handout-stats-sxn">
@@ -72,7 +62,7 @@ class ClimateHandout extends Component {
       <p>When we consider the full infrastructure, supply chain, and scale of global 
       computing, we see major environmental effects.<sup>1</sup></p>
       <ul>
-        <li>There are currently about <b>30 billion computationally-enabled electronic devices</b> worldwide in 2019</li>
+        <li>There are currently about <b>30 billion (wow) computationally-enabled electronic devices</b> worldwide in 2019</li>
         <li>Computation and the Internet represent <b>6.4% of electricity consumed worldwide</b></li>
         <li>This represents <b>1.5 billion tons of greenhouse gases</b> emitted annually</li>
         <li>End users represent 66%, network infrastructure represents 20%, and data centers represent 13% of
@@ -105,9 +95,89 @@ class ClimateHandout extends Component {
         <li>and the end-of-life pollution of the components during disposal.</li>
       </b></ol>
 
+      
       {this.renderEnergyUse()}
       {this.renderManufacturingUse()}
     </div>)
+  }
+
+  renderWhatWeKnow() {
+    return (
+      <div>
+        <h2>What do we know about Climate Change?</h2>
+        <hr/>
+        <p>
+        During the last Ice Age the world was 4.5 degrees 
+        celsius colder than it is now. Let’s follow 
+        &nbsp;<a href="https://xkcd.com/1379/">XKCD’s</a>&nbsp;
+        lead and call that one "ice age unit" (IAU). When the 
+        world was 1 IAU colder, New York was under half a 
+        mile of ice. 
+        </p>
+        <center><img
+          style= {{'width':'80%'}}
+          src = {IMG_ROOT + "xkcdIAU.png"}
+        /></center>
+        <div className="climate-definition">
+        Define: Ice Age Unit<br/>
+An Ice Age Unit (IAU) is a measure of temperature. 1 IAU is equal to 4.5 degrees Celsius. Which is equal to 8.1 degrees Fahrenheit. At the coldest part of the last ice age, the world was 1 IAU colder than normal.
+        </div>
+        <p>
+        We are projected to hit 1 IAU warmer by 2100. What is that going to look like? Worse, by 2100 we will have put enough CO2 into the air that we won't be able to stop the Earth from eventually warming to 2 IAU.
+
+While palm trees at the poles sounds awesome, the rest of the world will likely be desert. Less awesome. And the ocean? Too acidic for beach vacations! So let’s avoid that. We are already 20% of an ice age unit warmer than normal.
+</p>
+<p>
+Here is the big picture of what we know:
+<ol>
+<li>By 2050 we will have doubled atmospheric CO2 (and we won’t stop there).</li>
+<li>Double CO2 will cause something close to 1 IAU increase in temperature.</li>
+<li>An earth which is one Ice Age Unit hotter sounds really bad (2 IAU sounds horrible).</li>
+</ol>
+</p>
+<p>
+Understanding climate change is a great chance to learn about probability, physics and computer science!
+</p>
+<h3>1. We Are <b className="climate-blue">Dumping</b> CO2 into the Air </h3>
+<p>
+Let’s start from the present:
+In June 2018 the concentration of CO2 in our atmosphere was 411 
+parts per million (3.2 gigatons). All previous human 
+civilization has occurred with an earth that has 275 parts per 
+million, aka pre-industrial times. CO2 is increasing fast! Each year 
+it goes up about 2.1 parts per million (and that rate is increasing). 
+At our current trajectory CO2 in the air is going to be double 
+pre-industrial amounts by 2050. Plan on living 30 years more? You should
+expect a crazy high amount of CO2 in the air.
+</p>
+<center>
+  <img
+    style= {{'width':'100%'}}
+    src = {IMG_ROOT + "co2Time.png"}
+  />
+</center>
+<p>
+This isn’t really aguable. We are absolutely adding a 
+lot of CO2 into the atmosphere. So what? At this point 
+all I’ve said is that we have added a lot of CO2. 
+I have given you no reason to think that it is a problem.
+</p>
+<p>
+CO2 has two main direct impacts on the planet:
+<ol>
+<li> Greenhouse Effect: CO2 prevents heat from leaving 
+the earth, like a nice toasty blanket. </li>
+<li> Ocean Acidification: when CO2 dissolves into the ocean, 
+it makes carbonic acid. </li>
+</ol>
+</p>
+<p>
+We have already observed both in my lifetime. 
+The ocean has gotten so hot / acidic that half of the coral reefs are dead. 
+But more on that later. For now let’s focus on the warming part.
+</p>
+</div>
+    )
   }
 
   renderEnergyUse() {
@@ -301,8 +371,9 @@ class ClimateHandout extends Component {
         </div>
         <br/>
         {this.renderContentBar_Links()}
+        {this.renderWhatWeKnow()}
         {this.renderClimateInComputing()}
-        {/*this.renderWhatWeKnow()*/}
+        
         {this.renderResourceUse()}
         {this.renderEthics()}
         {this.renderHelps()}
